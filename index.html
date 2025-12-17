@@ -48,31 +48,26 @@
     h1{ font-size:18px; margin:0; letter-spacing:.5px; }
     .sub{ font-size:12px; color:var(--muted); margin-top:2px; }
     .top-actions{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
-
     button{
       border:0; border-radius:14px; padding:10px 12px;
       background:#fff; box-shadow:0 6px 18px rgba(0,0,0,.06);
-      cursor:pointer; font-weight:800; color:var(--ink);
+      cursor:pointer; font-weight:700; color:var(--ink);
       transition: transform .08s ease, box-shadow .08s ease;
       user-select:none;
       white-space:nowrap;
     }
     button:active{ transform: translateY(1px); box-shadow:0 4px 12px rgba(0,0,0,.06); }
-    button:disabled{ opacity:.55; cursor:not-allowed; }
-
     .btn-primary{ background: linear-gradient(135deg, var(--primary), #ff9ccc); color:#fff; }
     .btn-ghost{ background: rgba(255,255,255,.72); backdrop-filter: blur(10px); }
     .btn-warn{ background: linear-gradient(135deg, #ffd7a8, #fff0c9); }
     .btn-danger{ background: linear-gradient(135deg, #ffb7c9, #ffe3ea); }
-
     .pill{
       display:inline-flex; align-items:center; gap:8px;
       padding:10px 12px; border-radius:999px;
       background: rgba(255,255,255,.72);
       box-shadow: 0 6px 18px rgba(0,0,0,.06);
-      font-weight:900;
+      font-weight:800;
     }
-
     .timer-pill{
       display:inline-flex; align-items:center; gap:8px;
       padding:10px 12px; border-radius:999px;
@@ -80,28 +75,10 @@
       box-shadow: 0 6px 18px rgba(0,0,0,.06);
       font-weight:900;
     }
-    .timer-pill .tlabel{ font-size:12px; color:var(--muted); font-weight:900; }
+    .timer-pill .tlabel{ font-size:12px; color:var(--muted); font-weight:800; }
     .timer-pill .tvalue{ font-variant-numeric: tabular-nums; letter-spacing:.5px; }
-
     .switch{ display:inline-flex; align-items:center; gap:8px; font-size:13px; color:var(--ink); }
     .switch input{ width:18px; height:18px; accent-color: var(--primary); }
-
-    .gridsize-pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px; border-radius:999px;
-      background: rgba(255,255,255,.72);
-      box-shadow: 0 6px 18px rgba(0,0,0,.06);
-      font-weight:900;
-    }
-    .gridsize-pill label{ font-size:12px; color:var(--muted); font-weight:900; }
-    .gridsize-pill select{
-      border:1px solid rgba(0,0,0,.10);
-      border-radius:999px;
-      padding:6px 10px;
-      background: rgba(255,255,255,.95);
-      font-weight:900;
-      outline:none;
-    }
 
     main{
       max-width:1200px;
@@ -141,32 +118,11 @@
     }
     .card-b{ padding:14px; }
 
-    .lesson-section{
-      margin-top:10px;
-      padding:8px 10px;
-      border-radius:14px;
-      background: rgba(255,255,255,.65);
-      border: 1px solid rgba(0,0,0,.06);
-      font-weight:900;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
-
     .lesson-grid{
       display:grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap:10px;
-      margin-top:10px;
-      padding-right: 6px;
     }
-    /* ✅ 自訂清單可捲動；內建不捲動，確保一定可見 */
-    .lesson-grid.scroll{
-      max-height: 260px;
-      overflow:auto;
-    }
-
     .lesson-btn{
       text-align:left;
       border-radius:16px;
@@ -193,8 +149,7 @@
       background:#fff;
       border: 1px solid rgba(0,0,0,.06);
       display:flex; align-items:center; gap:10px; justify-content:space-between;
-      font-weight:900;
-      cursor:pointer;
+      font-weight:800;
     }
     .w.found{
       border-color: rgba(47,191,113,.55);
@@ -244,7 +199,7 @@
     }
     .pause-overlay.show{ display:flex; }
     .pause-overlay .box{
-      background: rgba(255,255,255,.92);
+      background: rgba(255,255,255,.90);
       border: 1px solid rgba(0,0,0,.06);
       border-radius:16px;
       padding:12px 14px;
@@ -273,7 +228,6 @@
       background: rgba(138,125,255,.18);
       border-color: rgba(138,125,255,.45);
     }
-
     .status{
       margin-top:10px;
       display:flex; gap:10px; align-items:center; flex-wrap:wrap;
@@ -285,7 +239,7 @@
     .toast{
       padding:10px 12px;
       border-radius:14px;
-      background: rgba(255,255,255,.88);
+      background: rgba(255,255,255,.85);
       border:1px solid rgba(0,0,0,.06);
       box-shadow: 0 8px 22px rgba(0,0,0,.08);
       position:fixed;
@@ -316,9 +270,10 @@
       border:1px solid rgba(0,0,0,.10);
       padding:10px 12px;
       background: rgba(255,255,255,.85);
-      font-weight:900;
+      font-weight:800;
       outline:none;
     }
+    select{ font-weight:800; }
     .divider{ height:1px; background: rgba(0,0,0,.06); margin:12px 0; }
     .hint{
       display:inline-flex; gap:6px; align-items:center;
@@ -354,19 +309,6 @@
   <div class="top-actions">
     <span class="pill" id="pillLesson">尚未選課</span>
 
-    <span class="gridsize-pill" title="字格尺寸（固定尺寸可能放不下語詞）">
-      <label for="gridSizeSelect">字格</label>
-      <select id="gridSizeSelect">
-        <option value="auto">自動</option>
-        <option value="9">9×9</option>
-        <option value="10">10×10</option>
-        <option value="11">11×11</option>
-        <option value="12">12×12</option>
-        <option value="13">13×13</option>
-        <option value="14">14×14</option>
-      </select>
-    </span>
-
     <span class="timer-pill" title="計時器">
       <span class="tlabel">⏱ 計時</span>
       <span class="tvalue" id="timerText">00:00</span>
@@ -391,7 +333,7 @@
         <span class="badge" id="badgeSize">—</span>
       </div>
       <div class="row">
-        <span class="hint">只允許 ↓ ↘ ↙</span>
+        <span class="hint" title="操作提示">只允許 ↓ ↘ ↙</span>
         <span class="okpill" id="pillProgress" style="display:none;">完成！</span>
       </div>
     </div>
@@ -435,38 +377,27 @@
   <aside class="card">
     <div class="card-h">
       <div class="title">🎒 課程選擇（按鈕）</div>
-      <span class="badge">內建一定顯示</span>
+      <span class="badge">右側只保留自訂輸入</span>
     </div>
 
     <div class="card-b">
       <div class="small">
-        內建題庫固定顯示；你也可以在下方<strong>只輸入語詞</strong>建立「自訂課程」，並永久儲存在本機瀏覽器。
+        你可以先用內建課程；也可以在下方<strong>只輸入語詞</strong>建立「自訂課程」，並永久儲存在本機瀏覽器。
       </div>
 
       <div class="divider"></div>
 
       <div class="row" style="justify-content:space-between;">
         <strong>課程清單（點按鈕切換）</strong>
-        <button class="btn-ghost" id="btnGoBuiltin">回到內建第七課</button>
+        <button class="btn-ghost" id="btnUseBuiltin">使用內建題庫</button>
       </div>
-
-      <div class="lesson-section">
-        <div>🌟 內建題庫（G3A）</div>
-        <div class="small">第七～第十二課</div>
-      </div>
-      <div class="lesson-grid" id="builtinGrid"></div>
-
-      <div class="lesson-section">
-        <div>📝 已儲存自訂課程（本機）</div>
-        <div class="small">可捲動</div>
-      </div>
-      <div class="lesson-grid scroll" id="savedGrid"></div>
+      <div class="lesson-grid" id="lessonGrid" style="margin-top:10px;"></div>
 
       <div class="divider"></div>
 
       <strong>自訂區（只輸入語詞）</strong>
       <div class="small" style="margin:6px 0 8px;">
-        語詞<strong>每行一個</strong>。按「建立/更新」會儲存到本機並直接開始該課。
+        1) 課程名稱可改；2) 語詞<strong>每行一個</strong>；3) 按「建立/更新」會<strong>自動儲存</strong>並生成字格與重設計時。
       </div>
 
       <label class="small" for="customLessonName">自訂課程名稱（同名會覆寫）</label>
@@ -489,7 +420,11 @@
 
       <div class="divider"></div>
 
-      <strong>已儲存的自訂課程（下拉）</strong>
+      <strong>已儲存的自訂課程（本機）</strong>
+      <div class="small" style="margin:6px 0 8px;">
+        這些課程會保存在同一台電腦/同一個瀏覽器中；換電腦或清除瀏覽器資料後會消失。
+      </div>
+
       <label class="small" for="savedSelect">選擇要載入的自訂課程</label>
       <select id="savedSelect"></select>
 
@@ -498,6 +433,16 @@
         <button class="btn-primary" id="btnPlaySaved">直接開始此課</button>
         <button class="btn-danger" id="btnDeleteSaved">刪除此課（本機）</button>
       </div>
+
+      <div class="divider"></div>
+
+      <strong>遊戲規則（給學生）</strong>
+      <ul class="small" style="margin-top:8px; padding-left:18px;">
+        <li>點右側課程按鈕，看到「本課語詞清單」。</li>
+        <li>在字格中按住拖曳連線：只允許 <strong>↓、↘、↙</strong>。</li>
+        <li>找到會打勾；全部找完會播放不同完成音效並停止計時。</li>
+        <li>按「暫停」會鎖住字格（無法操作）。</li>
+      </ul>
     </div>
   </aside>
 </main>
@@ -505,58 +450,86 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-/* ------------------------------
-   A) 內建題庫：G3A2 一律轉 G3A
--------------------------------- */
-function normalizeLessonTitle(title){
-  return String(title || "").replace(/G3A2/g, "G3A").trim();
-}
-function normalizeBuiltinLessons(builtinArr){
-  return builtinArr.map(x => ({ ...x, lesson: normalizeLessonTitle(x.lesson) }));
-}
+/** =========================
+ * 內建題庫：G3A2 第七～第十二課（第八課精簡15詞）
+ * ========================= */
+const BUILTIN = {
+  lessons: [
+    { lesson: "G3A2第七課淡水小鎮", words: ["傳統","餅店","商行","阿婆","鐵蛋","蒼老","紅毛城","山坡","回憶","夕陽","搖盪","網魚","堅硬"] },
+    { lesson: "G3A2第八課安平古堡參觀記（精簡15詞）", words: ["教育","博物館","史料","模型","荷蘭","鄭成功","打敗","駐守","守護","勇敢","士兵","土地","瞭望臺","屋頂","地標"] },
+    { lesson: "G3A2第九課馬太鞍的巴拉告", words: ["花蓮","馬太鞍","巴拉告","溼地","阿美族","特別","捕魚","方式","打造","魚屋","竹子","植物","釣魚","智慧","生態"] },
+    { lesson: "G3A2第十課狐狸的祕密", words: ["狐狸","萬里","兄弟","祕密","放棄","烏鴉","妙計","強壯","酸葡萄","進入","飛踢","肉塊"] },
+    { lesson: "G3A2第十一課巨人的花園", words: ["巨人","愉悅","拜訪","免得","離開","顯得","漫長","乾枯","恍然大悟","拆除","圍牆","盛開"] },
+    { lesson: "G3A2第十二課奇特的朋友", words: ["故障","綿羊","沙漠","中央","男孩","重複","疑問","打算","帽子","後退","蟒蛇","驚訝"] }
+  ]
+};
 
-/* 可選遷移：把已儲存自訂課程名稱中的 G3A2 也轉成 G3A（避免混亂） */
+/** =========================
+ * 自訂課程存取（localStorage）
+ * ========================= */
 const LS_KEY = "cute_wordsearch_custom_lessons_v1";
-function migrateSavedLessonTitles_G3A2_to_G3A(){
+
+function loadSavedCustomLessons(){
   try{
     const raw = localStorage.getItem(LS_KEY);
-    if(!raw) return;
+    if(!raw) return [];
     const arr = JSON.parse(raw);
-    if(!Array.isArray(arr)) return;
-    let changed = false;
-    const migrated = arr.map(item => {
-      const oldName = String(item.lesson || "");
-      const newName = normalizeLessonTitle(oldName);
-      if(newName !== oldName) changed = true;
-      return { ...item, lesson: newName };
-    });
-    if(changed) localStorage.setItem(LS_KEY, JSON.stringify(migrated));
-  }catch(_){}
+    if(!Array.isArray(arr)) return [];
+    // 防呆清洗
+    return arr
+      .map(x => ({
+        lesson: String(x.lesson || "").trim(),
+        words: Array.isArray(x.words) ? x.words.map(w=>String(w||"").trim()).filter(Boolean) : []
+      }))
+      .filter(x => x.lesson && x.words.length >= 2);
+  }catch(_){
+    return [];
+  }
+}
+function saveCustomLessons(list){
+  try{
+    localStorage.setItem(LS_KEY, JSON.stringify(list));
+    return true;
+  }catch(_){
+    return false;
+  }
+}
+function upsertSavedLesson(lessonName, words){
+  const cleanName = String(lessonName||"").trim();
+  const cleanWords = normalizeWords(words);
+  if(!cleanName) throw new Error("課程名稱不可空白。");
+  if(cleanWords.length < 2) throw new Error("至少需要 2 個語詞（每行一個）。");
+
+  const list = loadSavedCustomLessons();
+  const idx = list.findIndex(x => x.lesson === cleanName);
+  const payload = { lesson: cleanName, words: cleanWords };
+  if(idx >= 0) list[idx] = payload;
+  else list.unshift(payload); // 最新放最前
+  if(!saveCustomLessons(list)) throw new Error("儲存失敗：可能是瀏覽器阻擋或儲存空間不足。");
+  return list;
+}
+function deleteSavedLessonByName(lessonName){
+  const name = String(lessonName||"").trim();
+  const list = loadSavedCustomLessons().filter(x => x.lesson !== name);
+  if(!saveCustomLessons(list)) throw new Error("刪除失敗：可能是瀏覽器阻擋或儲存空間不足。");
+  return list;
 }
 
-/* ------------------------------
-   B) 內建題庫（你可保留原本 G3A2 寫法，會自動轉）
--------------------------------- */
-const BUILTIN_RAW = [
-  { lesson: "G3A2第七課淡水小鎮", words: ["傳統","餅店","商行","阿婆","鐵蛋","蒼老","紅毛城","山坡","回憶","夕陽","搖盪","網魚","堅硬"] },
-  { lesson: "G3A2第八課安平古堡參觀記（精簡15詞）", words: ["教育","博物館","史料","模型","荷蘭","鄭成功","打敗","駐守","守護","勇敢","士兵","土地","瞭望臺","屋頂","地標"] },
-  { lesson: "G3A2第九課馬太鞍的巴拉告", words: ["花蓮","馬太鞍","巴拉告","溼地","阿美族","特別","捕魚","方式","打造","魚屋","竹子","植物","釣魚","智慧","生態"] },
-  { lesson: "G3A2第十課狐狸的祕密", words: ["狐狸","萬里","兄弟","祕密","放棄","烏鴉","妙計","強壯","酸葡萄","進入","飛踢","肉塊"] },
-  { lesson: "G3A2第十一課巨人的花園", words: ["巨人","愉悅","拜訪","免得","離開","顯得","漫長","乾枯","恍然大悟","拆除","圍牆","盛開"] },
-  { lesson: "G3A2第十二課奇特的朋友", words: ["故障","綿羊","沙漠","中央","男孩","重複","疑問","打算","帽子","後退","蟒蛇","驚訝"] }
-];
-const BUILTIN = normalizeBuiltinLessons(BUILTIN_RAW);
+/** =========================
+ * App 狀態
+ * ========================= */
+let DB = structuredClone(BUILTIN);
+let currentLessonIndex = 0;
+let gridSize = 10;
+let grid = [];
+let placements = new Map();
+let found = new Set();
+let selecting = false;
+let startCell = null;
+let currentPath = [];
+let pointerId = null;
 
-/* ------------------------------
-   C) 其他儲存鍵
--------------------------------- */
-const LS_GRID_KEY = "cute_wordsearch_grid_size_v1";
-
-/* ------------------------------
-   D) DOM
--------------------------------- */
-const elBuiltinGrid = document.getElementById("builtinGrid");
-const elSavedGrid = document.getElementById("savedGrid");
+const elLessonGrid = document.getElementById("lessonGrid");
 const elGrid = document.getElementById("grid");
 const elPauseOverlay = document.getElementById("pauseOverlay");
 const elWordList = document.getElementById("wordList");
@@ -578,118 +551,18 @@ const btnLoadSaved = document.getElementById("btnLoadSaved");
 const btnPlaySaved = document.getElementById("btnPlaySaved");
 const btnDeleteSaved = document.getElementById("btnDeleteSaved");
 
+/** =========================
+ * 計時器 + 暫停鎖定
+ * ========================= */
 const elTimerText = document.getElementById("timerText");
 const btnTimerToggle = document.getElementById("btnTimerToggle");
 const btnTimerReset = document.getElementById("btnTimerReset");
 
-const elGridSizeSelect = document.getElementById("gridSizeSelect");
-
-/* ------------------------------
-   E) 狀態
--------------------------------- */
-let currentSource = "builtin"; // "builtin" | "saved"
-let currentIndex = 0;
-
-let gridSizeMode = "auto";
-let gridSize = 10;
-let grid = [];
-let placements = new Map();
-let found = new Set();
-
-let selecting = false;
-let startCell = null;
-let currentPath = [];
-let pointerId = null;
-
-/* 計時 */
 let timerMs = 0;
 let timerRunning = false;
 let timerHandle = null;
 let timerLastTs = null;
 
-/* ------------------------------
-   F) 共用工具
--------------------------------- */
-function escapeHtml(s){
-  return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-}
-function showToast(title, msg, ms=1600){
-  elToast.innerHTML = `<strong>${escapeHtml(title)}</strong><div class="small">${escapeHtml(msg)}</div>`;
-  elToast.classList.add("show");
-  clearTimeout(showToast._t);
-  showToast._t = setTimeout(()=> elToast.classList.remove("show"), ms);
-}
-function normalizeWords(words){
-  const seen = new Set(); const out = [];
-  for(const w of words){
-    const t = String(w||"").trim();
-    if(!t) continue;
-    if(seen.has(t)) continue;
-    seen.add(t); out.push(t);
-  }
-  return out;
-}
-function parseLinesToWords(raw){
-  return normalizeWords(String(raw||"").replace(/\r/g,"").split("\n").map(s=>s.trim()).filter(Boolean));
-}
-function randInt(a,b){ return Math.floor(Math.random()*(b-a+1))+a; }
-function choice(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
-
-/* ------------------------------
-   G) 自訂課程讀寫
--------------------------------- */
-function loadSavedCustomLessons(){
-  try{
-    const raw = localStorage.getItem(LS_KEY);
-    if(!raw) return [];
-    const arr = JSON.parse(raw);
-    if(!Array.isArray(arr)) return [];
-    return arr
-      .map(x => ({
-        lesson: normalizeLessonTitle(String(x.lesson || "").trim()),
-        words: Array.isArray(x.words) ? x.words.map(w=>String(w||"").trim()).filter(Boolean) : []
-      }))
-      .filter(x => x.lesson && x.words.length >= 2);
-  }catch(_){ return []; }
-}
-function saveCustomLessons(list){
-  try{ localStorage.setItem(LS_KEY, JSON.stringify(list)); return true; }catch(_){ return false; }
-}
-function upsertSavedLesson(lessonName, words){
-  const cleanName = normalizeLessonTitle(String(lessonName||"").trim());
-  const cleanWords = normalizeWords(words);
-  if(!cleanName) throw new Error("課程名稱不可空白。");
-  if(cleanWords.length < 2) throw new Error("至少需要 2 個語詞（每行一個）。");
-
-  const list = loadSavedCustomLessons();
-  const idx = list.findIndex(x => x.lesson === cleanName);
-  const payload = { lesson: cleanName, words: cleanWords };
-  if(idx >= 0) list[idx] = payload; else list.unshift(payload);
-  if(!saveCustomLessons(list)) throw new Error("儲存失敗：可能是瀏覽器阻擋或儲存空間不足。");
-  return list;
-}
-function deleteSavedLessonByName(lessonName){
-  const name = normalizeLessonTitle(String(lessonName||"").trim());
-  const list = loadSavedCustomLessons().filter(x => x.lesson !== name);
-  if(!saveCustomLessons(list)) throw new Error("刪除失敗：可能是瀏覽器阻擋或儲存空間不足。");
-  return list;
-}
-
-/* ------------------------------
-   H) 目前課程
--------------------------------- */
-function getCurrentLesson(){
-  const saved = loadSavedCustomLessons();
-  if(currentSource === "saved"){
-    if(saved.length === 0) return BUILTIN[0];
-    return saved[Math.min(currentIndex, saved.length - 1)];
-  }
-  return BUILTIN[Math.min(currentIndex, BUILTIN.length - 1)];
-}
-
-/* ------------------------------
-   I) 計時器
--------------------------------- */
 function fmtTime(ms){
   const totalSec = Math.floor(ms / 1000);
   const m = Math.floor(totalSec / 60);
@@ -735,18 +608,62 @@ function pauseTimer(){
   startCell = null;
 }
 function resetTimer(autoStart=true){
-  timerMs = 0; renderTimer();
-  clearInterval(timerHandle); timerHandle = null;
-  timerRunning = false;
-  if(autoStart) startTimer();
-  else { btnTimerToggle.textContent = "繼續"; setPausedUI(true); }
+  timerMs = 0;
+  renderTimer();
+  if(autoStart){
+    timerRunning = false;
+    clearInterval(timerHandle);
+    timerHandle = null;
+    startTimer();
+  }else{
+    timerRunning = false;
+    clearInterval(timerHandle);
+    timerHandle = null;
+    btnTimerToggle.textContent = "繼續";
+    setPausedUI(true);
+  }
 }
 btnTimerToggle.addEventListener("click", ()=>{ if(timerRunning) pauseTimer(); else startTimer(); });
-btnTimerReset.addEventListener("click", ()=>{ resetTimer(true); showToast("計時已重設","已歸零並重新開始計時。",1200); });
+btnTimerReset.addEventListener("click", ()=>{
+  resetTimer(true);
+  showToast("計時已重設", "已歸零並重新開始計時。", 1200);
+});
 
-/* ------------------------------
-   J) 字格大小
--------------------------------- */
+/** =========================
+ * 工具函式
+ * ========================= */
+function showToast(title, msg, ms=1600){
+  elToast.innerHTML = `<strong>${escapeHtml(title)}</strong><div class="small">${escapeHtml(msg)}</div>`;
+  elToast.classList.add("show");
+  window.clearTimeout(showToast._t);
+  showToast._t = window.setTimeout(()=> elToast.classList.remove("show"), ms);
+}
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+function randInt(a,b){ return Math.floor(Math.random()*(b-a+1))+a; }
+function choice(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+function normalizeWords(words){
+  const seen = new Set();
+  const out = [];
+  for(const w of words){
+    const t = String(w||"").trim();
+    if(!t) continue;
+    if(seen.has(t)) continue;
+    seen.add(t);
+    out.push(t);
+  }
+  return out;
+}
+function parseLinesToWords(raw){
+  const lines = String(raw||"")
+    .replace(/\r/g,"")
+    .split("\n")
+    .map(s => s.trim())
+    .filter(s => s.length > 0);
+  return normalizeWords(lines);
+}
 function computeGridSize(words){
   const maxLen = Math.max(...words.map(w=>w.length), 2);
   const count = words.length;
@@ -762,28 +679,10 @@ function setResponsiveCellSize(n){
   document.documentElement.style.setProperty("--cell", `${Math.max(28, Math.min(52, cell))}px`);
   document.documentElement.style.setProperty("--n", n);
 }
-function loadGridPref(){
-  try{
-    const v = localStorage.getItem(LS_GRID_KEY);
-    if(!v) return "auto";
-    if(v === "auto") return "auto";
-    const n = Number(v);
-    if([9,10,11,12,13,14].includes(n)) return String(n);
-    return "auto";
-  }catch(_){ return "auto"; }
-}
-function saveGridPref(v){ try{ localStorage.setItem(LS_GRID_KEY, v); }catch(_){ } }
 
-elGridSizeSelect.addEventListener("change", ()=>{
-  gridSizeMode = elGridSizeSelect.value;
-  saveGridPref(gridSizeMode);
-  showToast("字格已更新", `目前字格設定：${gridSizeMode === "auto" ? "自動" : gridSizeMode + "×" + gridSizeMode"}。`, 1400);
-  startLesson(true);
-});
-
-/* ------------------------------
-   K) 生成字格（方向限定 ↓ ↘ ↙）
--------------------------------- */
+/** =========================
+ * 方向限制：只允許一律往下：↓ ↘ ↙
+ * ========================= */
 const DIRECTIONS = [
   { dr: 1, dc: 0 },   // ↓
   { dr: 1, dc: 1 },   // ↘
@@ -829,59 +728,49 @@ function fillRandomChars(n, board){
     }
   }
 }
-
 function buildPuzzle(lesson){
   const words = normalizeWords(lesson.words);
   if(words.length < 1) throw new Error("本課沒有語詞。");
 
-  const isAuto = (gridSizeMode === "auto");
-  const chosen = isAuto ? computeGridSize(words) : Number(gridSizeMode);
-
-  gridSize = chosen;
+  gridSize = computeGridSize(words);
   setResponsiveCellSize(gridSize);
 
   grid = Array.from({length:gridSize}, ()=> Array.from({length:gridSize}, ()=> ""));
   placements.clear();
 
   const sorted = [...words].sort((a,b)=> b.length - a.length);
-
   for(const w of sorted){
     const coords = placeWord(w, gridSize, grid);
     if(!coords){
-      if(isAuto && gridSize < 14){
-        for(let tryN = gridSize + 1; tryN <= 14; tryN++){
-          gridSize = tryN;
-          setResponsiveCellSize(gridSize);
-          grid = Array.from({length:gridSize}, ()=> Array.from({length:gridSize}, ()=> ""));
-          placements.clear();
-          let ok = true;
-          for(const ww of sorted){
-            const cc = placeWord(ww, gridSize, grid);
-            if(!cc){ ok = false; break; }
-            placements.set(ww, cc);
-          }
-          if(ok){
-            fillRandomChars(gridSize, grid);
-            return {words};
-          }
+      if(gridSize < 14){
+        gridSize += 1;
+        setResponsiveCellSize(gridSize);
+        grid = Array.from({length:gridSize}, ()=> Array.from({length:gridSize}, ()=> ""));
+        placements.clear();
+        for(const ww of sorted){
+          const cc = placeWord(ww, gridSize, grid);
+          if(!cc) throw new Error(`語詞放置失敗：${ww}（可減少語詞數或縮短詞長）`);
+          placements.set(ww, cc);
         }
-        throw new Error("自動放置仍失敗：請減少語詞數或縮短詞長。");
+        fillRandomChars(gridSize, grid);
+        return {words};
+      } else {
+        throw new Error(`語詞放置失敗：${w}（可減少語詞數或縮短詞長）`);
       }
-      throw new Error(`字格 ${chosen}×${chosen} 放不下「${w}」。請改大字格或改回「自動」。`);
     }
     placements.set(w, coords);
   }
-
   fillRandomChars(gridSize, grid);
   return {words};
 }
 
-/* ------------------------------
-   L) 音效 + 朗讀
--------------------------------- */
-function playTone(ctx, freq, ms, gain=0.05){
+/** =========================
+ * 音效
+ * ========================= */
+function playTone(ctx, freq, ms, gain=0.05, type="sine"){
   const o = ctx.createOscillator();
   const g = ctx.createGain();
+  o.type = type;
   o.frequency.value = freq;
   g.gain.value = gain;
   o.connect(g); g.connect(ctx.destination);
@@ -927,54 +816,26 @@ function speak(text){
   }catch(_){}
 }
 
-/* ------------------------------
-   M) 渲染：課程按鈕（內建一定顯示）
--------------------------------- */
-function renderLessonButtons(){
-  // ✅ 內建：永遠渲染（不依賴任何合併）
-  elBuiltinGrid.innerHTML = "";
-  BUILTIN.forEach((l, idx)=>{
+/** =========================
+ * 渲染
+ * ========================= */
+function renderLessons(){
+  elLessonGrid.innerHTML = "";
+  DB.lessons.forEach((l, idx)=>{
     const btn = document.createElement("button");
     btn.className = "lesson-btn";
-    if(currentSource === "builtin" && idx === currentIndex) btn.classList.add("active");
+    if(idx === currentLessonIndex) btn.classList.add("active");
     const words = normalizeWords(l.words);
-    btn.innerHTML = `<strong>🌟 ${escapeHtml(l.lesson)}</strong><span>${words.length} 個語詞</span>`;
+    const prefix = l._saved ? "📝 " : "🌟 ";
+    btn.innerHTML = `<strong>${prefix}${escapeHtml(l.lesson)}</strong><span>${words.length} 個語詞</span>`;
     btn.addEventListener("click", ()=>{
-      currentSource = "builtin";
-      currentIndex = idx;
+      currentLessonIndex = idx;
       startLesson(true);
-      renderLessonButtons();
+      renderLessons();
     });
-    elBuiltinGrid.appendChild(btn);
+    elLessonGrid.appendChild(btn);
   });
-
-  // 自訂
-  const saved = loadSavedCustomLessons();
-  elSavedGrid.innerHTML = "";
-  if(saved.length === 0){
-    const div = document.createElement("div");
-    div.className = "small";
-    div.style.padding = "6px 4px";
-    div.textContent = "（尚無已儲存自訂課程）";
-    elSavedGrid.appendChild(div);
-  }else{
-    saved.forEach((l, idx)=>{
-      const btn = document.createElement("button");
-      btn.className = "lesson-btn";
-      if(currentSource === "saved" && idx === currentIndex) btn.classList.add("active");
-      const words = normalizeWords(l.words);
-      btn.innerHTML = `<strong>📝 ${escapeHtml(l.lesson)}</strong><span>${words.length} 個語詞</span>`;
-      btn.addEventListener("click", ()=>{
-        currentSource = "saved";
-        currentIndex = idx;
-        startLesson(true);
-        renderLessonButtons();
-      });
-      elSavedGrid.appendChild(btn);
-    });
-  }
 }
-
 function renderWordList(words){
   elWordList.innerHTML = "";
   elTotalCount.textContent = String(words.length);
@@ -988,7 +849,6 @@ function renderWordList(words){
   }
   updateProgress();
 }
-
 function renderGrid(){
   elGrid.innerHTML = "";
   elGrid.style.setProperty("--n", gridSize);
@@ -1003,9 +863,8 @@ function renderGrid(){
     }
   }
 }
-
 function setHeaderMeta(words){
-  const lesson = getCurrentLesson();
+  const lesson = DB.lessons[currentLessonIndex];
   elPillLesson.textContent = `目前：${lesson.lesson}`;
   elLessonMeta.textContent = `共 ${words.length} 詞｜字格 ${gridSize}×${gridSize}`;
   elBadgeSize.textContent = `${gridSize}×${gridSize}`;
@@ -1015,7 +874,6 @@ function updateProgress(){
   const total = Number(elTotalCount.textContent || "0");
   elPillProgress.style.display = (total > 0 && found.size === total) ? "inline-flex" : "none";
 }
-
 function getCellEl(r,c){ return elGrid.querySelector(`.cell[data-r="${r}"][data-c="${c}"]`); }
 function clearSelection(){
   for(const el of elGrid.querySelectorAll(".cell.sel")) el.classList.remove("sel");
@@ -1030,9 +888,9 @@ function applySelection(path){
   currentPath = path;
 }
 
-/* ------------------------------
-   N) 操作：只允許 ↓ ↘ ↙
--------------------------------- */
+/** =========================
+ * 選取路徑：只允許 ↓ ↘ ↙（一律往下）
+ * ========================= */
 function getLinePath(a, b){
   const dr = b.r - a.r;
   const dc = b.c - a.c;
@@ -1077,6 +935,9 @@ function markFound(word){
   updateProgress();
 }
 
+/** =========================
+ * 指標事件（滑鼠/觸控）
+ * ========================= */
 function cellFromPoint(x,y){
   const el = document.elementFromPoint(x,y);
   if(!el) return null;
@@ -1085,7 +946,7 @@ function cellFromPoint(x,y){
   return { r: Number(cell.dataset.r), c: Number(cell.dataset.c) };
 }
 function onPointerDown(e){
-  if(!timerRunning) return;
+  if(!timerRunning) return; // 暫停＝鎖住
   elGrid.setPointerCapture?.(e.pointerId);
   pointerId = e.pointerId;
   const p = cellFromPoint(e.clientX, e.clientY);
@@ -1108,8 +969,7 @@ function onPointerUp(e){
   pointerId = null;
 
   const selected = pathToString(currentPath);
-  const lesson = getCurrentLesson();
-  const words = normalizeWords(lesson.words);
+  const words = normalizeWords(DB.lessons[currentLessonIndex].words);
   const hit = words.find(w => w === selected) || null;
 
   if(hit && !found.has(hit)){
@@ -1119,65 +979,87 @@ function onPointerUp(e){
 
     if(doneAll){
       sfxAllDone();
+      // 全部完成：停止計時並鎖住
       timerRunning = false;
       clearInterval(timerHandle);
       timerHandle = null;
       btnTimerToggle.textContent = "繼續";
       setPausedUI(true);
-      showToast("全都找到了！", `你完成了「${lesson.lesson}」。用時 ${fmtTime(timerMs)}。`, 2600);
+
+      showToast("全都找到了！", `你完成了「${DB.lessons[currentLessonIndex].lesson}」。用時 ${fmtTime(timerMs)}。`, 2600);
     }else{
       sfxFoundOne();
       showToast("找到啦！", `你找到了「${hit}」。`);
     }
+
     if(elTTSToggle.checked) speak(hit);
+  }else if(hit && found.has(hit)){
+    sfxWrong();
+    showToast("這個已經找過了", `「${hit}」已經打勾了。`, 1200);
   }else{
     sfxWrong();
   }
 
-  clearSelection();
+  for(const el of elGrid.querySelectorAll(".cell.sel")) el.classList.remove("sel");
+  currentPath = [];
   startCell = null;
 }
 
-/* ------------------------------
-   O) 開始/重設
--------------------------------- */
+/** =========================
+ * 開始/重設
+ * ========================= */
 function startLesson(regenerate=true){
-  const lesson = getCurrentLesson();
+  const lesson = DB.lessons[currentLessonIndex];
+
+  // 切課/重生/重新開始：重設計時並開始（解除鎖定）
   resetTimer(true);
 
-  try{
-    if(regenerate){
-      found.clear();
-      placements.clear();
-      const result = buildPuzzle(lesson);
-      setHeaderMeta(result.words);
-      renderGrid();
-      renderWordList(result.words);
-      showToast("開始囉！", `已載入「${lesson.lesson}」。`);
-    }else{
-      found.clear();
-      for(const el of elGrid.querySelectorAll(".cell.found")) el.classList.remove("found");
-      for(const el of elWordList.querySelectorAll(".w.found")){
-        el.classList.remove("found");
-        const tick = el.querySelector(".tick");
-        if(tick) tick.textContent = "□";
-      }
-      updateProgress();
-      showToast("重新開始", "已清除找到狀態並重新計時。");
+  if(regenerate){
+    found.clear();
+    placements.clear();
+    const result = buildPuzzle(lesson);
+    setHeaderMeta(result.words);
+    renderGrid();
+    renderWordList(result.words);
+    showToast("開始囉！", `已載入「${lesson.lesson}」。`);
+  }else{
+    found.clear();
+    for(const el of elGrid.querySelectorAll(".cell.found")) el.classList.remove("found");
+    for(const el of elWordList.querySelectorAll(".w.found")){
+      el.classList.remove("found");
+      const tick = el.querySelector(".tick");
+      if(tick) tick.textContent = "□";
     }
-  }catch(err){
-    timerRunning = false;
-    clearInterval(timerHandle);
-    timerHandle = null;
-    btnTimerToggle.textContent = "繼續";
-    setPausedUI(true);
-    showToast("生成失敗", err.message || String(err), 2600);
+    updateProgress();
+    showToast("重新開始", "已清除找到狀態並重新計時。");
+  }
+  renderLessons();
+}
+
+/** =========================
+ * 自訂課程：建立/更新（同時寫入 localStorage）
+ * ========================= */
+function upsertCustomIntoDB(lessonName, words, markSaved=false){
+  const cleanName = String(lessonName||"").trim() || "自訂課程";
+  const cleanWords = normalizeWords(words);
+  if(cleanWords.length < 2) throw new Error("至少需要 2 個語詞（每行一個）。");
+
+  // DB 內自訂課：以 _custom true（編輯中的那一個）
+  const idx = DB.lessons.findIndex(l => l._custom === true);
+  const payload = { lesson: cleanName, words: cleanWords, _custom: true, _saved: !!markSaved };
+
+  if(idx >= 0){
+    DB.lessons[idx] = payload;
+    return idx;
+  }else{
+    DB.lessons.unshift(payload);
+    return 0;
   }
 }
 
-/* ------------------------------
-   P) 自訂 UI
--------------------------------- */
+/** =========================
+ * 已儲存自訂課程 UI
+ * ========================= */
 function refreshSavedSelect(){
   const list = loadSavedCustomLessons();
   elSavedSelect.innerHTML = "";
@@ -1212,35 +1094,76 @@ function getSavedSelected(){
   return loadSavedCustomLessons().find(x => x.lesson === name) || null;
 }
 
+/** =========================
+ * 將「已儲存的自訂課程」同步到 DB（顯示成按鈕課程）
+ * ========================= */
+function mergeSavedIntoDB(){
+  const saved = loadSavedCustomLessons().map(x => ({
+    lesson: x.lesson,
+    words: x.words,
+    _saved: true
+  }));
+  // 重新建立 DB：saved(前) + (編輯中的 _custom 若存在) + built-in
+  const currentCustom = DB.lessons.find(l => l._custom === true) || null;
+  const builtins = structuredClone(BUILTIN).lessons;
+
+  const combined = [];
+  combined.push(...saved);
+  if(currentCustom) combined.push(currentCustom);
+  combined.push(...builtins);
+
+  DB.lessons = combined;
+
+  // 確保 currentLessonIndex 合法
+  currentLessonIndex = Math.min(currentLessonIndex, DB.lessons.length - 1);
+}
+
+/** =========================
+ * 事件：自訂建立/清空/切回內建
+ * ========================= */
 document.getElementById("btnApplyCustom").addEventListener("click", ()=>{
   try{
     const name = elCustomLessonName.value;
     const words = parseLinesToWords(elCustomWords.value);
-    upsertSavedLesson(name, words);
 
-    const cleanName = normalizeLessonTitle(name);
-    elCustomLessonName.value = cleanName;
-    elCustomNote.textContent = `已儲存「${cleanName}」，共 ${words.length} 個語詞。`;
+    // 先儲存到 localStorage
+    const newList = upsertSavedLesson(name, words);
 
-    showToast("自訂已儲存", `已保存到本機：${cleanName}。`);
+    // DB 中更新「編輯中的自訂課」
+    const idx = upsertCustomIntoDB(name, words, true);
 
-    const saved = loadSavedCustomLessons();
-    const idx = saved.findIndex(x => x.lesson === cleanName);
-    currentSource = "saved";
-    currentIndex = Math.max(0, idx);
-
+    // 同步 saved -> DB（變成可點按鈕）
+    mergeSavedIntoDB();
     refreshSavedSelect();
-    renderLessonButtons();
+
+    // 切到剛建立/更新的課程（優先切到 saved 課，因為按鈕會在最上面）
+    const savedIdx = DB.lessons.findIndex(l => l._saved && l.lesson === String(name).trim());
+    currentLessonIndex = savedIdx >= 0 ? savedIdx : idx;
+
+    elCustomNote.textContent = `已儲存「${String(name).trim()}」，共 ${words.length} 個語詞。`;
+    showToast("自訂已儲存", `已保存到本機：${String(name).trim()}。`);
     startLesson(true);
   }catch(err){
     showToast("自訂失敗", err.message || String(err), 2400);
   }
 });
+
 document.getElementById("btnClearCustom").addEventListener("click", ()=>{
   elCustomWords.value = "";
   elCustomNote.textContent = "";
   showToast("已清空", "可以重新貼上語詞。", 1200);
 });
+
+document.getElementById("btnUseBuiltin").addEventListener("click", ()=>{
+  DB = structuredClone(BUILTIN);
+  currentLessonIndex = 0;
+  elCustomNote.textContent = "";
+  // 仍保留已儲存課程在本機，但 DB 回到純內建
+  showToast("已切回內建題庫", "可直接開始玩（已重設計時）。");
+  startLesson(true);
+});
+
+/** 已儲存課程：載入到輸入框 / 直接開始 / 刪除 */
 btnLoadSaved.addEventListener("click", ()=>{
   const item = getSavedSelected();
   if(!item) return;
@@ -1248,44 +1171,43 @@ btnLoadSaved.addEventListener("click", ()=>{
   elCustomWords.value = item.words.join("\n");
   showToast("已載入", `已將「${item.lesson}」帶入輸入框。`, 1400);
 });
+
 btnPlaySaved.addEventListener("click", ()=>{
   const item = getSavedSelected();
   if(!item) return;
-  const saved = loadSavedCustomLessons();
-  const idx = saved.findIndex(x => x.lesson === item.lesson);
-  currentSource = "saved";
-  currentIndex = Math.max(0, idx);
-  renderLessonButtons();
-  startLesson(true);
+  mergeSavedIntoDB();
+  const idx = DB.lessons.findIndex(l => l._saved && l.lesson === item.lesson);
+  if(idx >= 0){
+    currentLessonIndex = idx;
+    startLesson(true);
+    renderLessons();
+    showToast("開始此課", `已載入「${item.lesson}」。`, 1400);
+  }
 });
+
 btnDeleteSaved.addEventListener("click", ()=>{
   const item = getSavedSelected();
   if(!item) return;
   try{
     deleteSavedLessonByName(item.lesson);
     refreshSavedSelect();
-    renderLessonButtons();
+    mergeSavedIntoDB();
+    renderLessons();
     showToast("已刪除", `已從本機刪除「${item.lesson}」。`, 1600);
   }catch(err){
     showToast("刪除失敗", err.message || String(err), 2200);
   }
 });
 
-/* ------------------------------
-   Q) 其他按鈕
--------------------------------- */
-document.getElementById("btnGoBuiltin").addEventListener("click", ()=>{
-  currentSource = "builtin";
-  currentIndex = 0;
-  renderLessonButtons();
-  startLesson(true);
-});
+/** =========================
+ * 控制按鈕
+ * ========================= */
 document.getElementById("btnNew").addEventListener("click", ()=> startLesson(true));
 document.getElementById("btnReset").addEventListener("click", ()=> startLesson(false));
 
-/* ------------------------------
-   R) 綁定事件 + 啟動
--------------------------------- */
+/** =========================
+ * 綁定指標事件
+ * ========================= */
 elGrid.addEventListener("pointerdown", onPointerDown);
 elGrid.addEventListener("pointermove", onPointerMove);
 elGrid.addEventListener("pointerup", onPointerUp);
@@ -1293,15 +1215,15 @@ elGrid.addEventListener("pointercancel", onPointerUp);
 
 window.addEventListener("resize", ()=> { if(gridSize) setResponsiveCellSize(gridSize); });
 
+/** =========================
+ * App 啟動
+ * ========================= */
 function startApp(){
-  // ✅ 先遷移一次（讓舊資料不影響顯示）
-  migrateSavedLessonTitles_G3A2_to_G3A();
-
-  gridSizeMode = loadGridPref();
-  elGridSizeSelect.value = gridSizeMode;
-
+  // 讀取已儲存自訂課程並合併進 DB
+  mergeSavedIntoDB();
   refreshSavedSelect();
-  renderLessonButtons();     // ✅ 內建按鈕在這裡必定渲染
+
+  renderLessons();
   renderTimer();
   startLesson(true);
 }
